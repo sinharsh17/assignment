@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>Add Car</h1>
+    
+    <!-- Display error messages if any -->
+    <% if (error) { %>
+        <p style="color: red;"><%= error %></p>
+    <% } %>
+
+    <form action="/admin/add-car" method="POST">
+        <div>
+            <label for="name">Car Name:</label>
+            <input type="text" id="name" name="name" placeholder="Car Name" required>
+        </div>
+        
+        <div>
+            <label for="manufacturingYear">Manufacturing Year:</label>
+            <input type="number" id="manufacturingYear" name="manufacturingYear" placeholder="Manufacturing Year" min="1900" max="2099" required>
+        </div>
+        
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" placeholder="Price" min="0" required>
+        </div>
+        
+        <button type="submit">Add Car</button>
+    </form>
+</body>
+</html>
